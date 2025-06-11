@@ -4,23 +4,30 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class EdificioPublico {
-    private Set<String> codigosUsados = new HashSet<>();
+    private Set<String> codigoUsado = new HashSet<>();
     private String id;
-    private String nombre;
+    private String nombreEdificio;
     private String direccion;
-    private int fundacion;
+    private String fundacion;
 
     public EdificioPublico() {
     }
 
-    public EdificioPublico(String id, String nombre, String direccion, int fundacion) {
+    public EdificioPublico(String id, String nombreEdificio, String direccion, String fundacion) {
         this.id = id;
-        codigosUsados.add(id);
-        this.nombre = nombre;
+        codigoUsado.add(id);
+        this.nombreEdificio = nombreEdificio;
         this.direccion = direccion;
         this.fundacion = fundacion;
     }
 
+    public Set<String> getCodigoUsado() {
+        return codigoUsado;
+    }
+
+    public void setCodigoUsado(Set<String> codigoUsado) {
+        this.codigoUsado = codigoUsado;
+    }
 
     public String getId() {
         return id;
@@ -30,12 +37,12 @@ public class EdificioPublico {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreEdificio() {
+        return nombreEdificio;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreEdificio(String nombreEdificio) {
+        this.nombreEdificio = nombreEdificio;
     }
 
     public String getDireccion() {
@@ -46,22 +53,21 @@ public class EdificioPublico {
         this.direccion = direccion;
     }
 
-    public int getFundacion() {
+    public String getFundacion() {
         return fundacion;
     }
 
-    public void setFundacion(int fundacion) {
+    public void setFundacion(String fundacion) {
         this.fundacion = fundacion;
     }
-
 
     @Override
     public String toString() {
         return "EdificioPublico{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
+                ", id='" + id + '\'' +
+                ", nombreEdificio='" + nombreEdificio + '\'' +
                 ", direccion='" + direccion + '\'' +
-                ", fundacion=" + fundacion +
+                ", fundacion='" + fundacion + '\'' +
                 '}';
     }
 }

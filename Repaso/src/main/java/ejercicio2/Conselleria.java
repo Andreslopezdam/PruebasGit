@@ -1,64 +1,59 @@
 package ejercicio2;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Conselleria {
-    private String nombre;
-    private Persona responsable;
-    private double presupuesto;
-    private List<EdificioPublico> edificios = new ArrayList<>();
+    private String nombreConselleria;
+    private Persona represetante;
+    private Integer presupuesto;
+    private ArrayList<EdificioPublico> edificios = new ArrayList<>();
 
     public Conselleria() {
     }
 
-    public Conselleria(String nombre, Persona responsable, double presupuesto) {
-        this.nombre = nombre;
-        this.responsable = responsable;
+    public Conselleria(String nombreConselleria, Persona represetante, Integer presupuesto) {
+        this.nombreConselleria = nombreConselleria;
+        this.represetante = represetante;
         this.presupuesto = presupuesto;
-        this.edificios = new ArrayList<>();
     }
 
-    public void agregarEdificio(EdificioPublico edificioPublico) {
+    public void agregarEdificio(EdificioPublico edificioPublico){
         edificios.add(edificioPublico);
     }
-    public String getNombre() {
-        return nombre;
+
+    public String getNombreConselleria() {
+        return nombreConselleria;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreConselleria(String nombreConselleria) {
+        this.nombreConselleria = nombreConselleria;
     }
 
-    public Persona getResponsable() {
-        return responsable;
+    public Persona getRepresetante() {
+        return represetante;
     }
 
-    public void setResponsable(Persona responsable) {
-        this.responsable = responsable;
+    public void setRepresetante(Persona represetante) {
+        this.represetante = represetante;
     }
 
-    public double getPresupuesto() {
+    public Integer getPresupuesto() {
         return presupuesto;
     }
 
-    public void setPresupuesto(double presupuesto) {
+    public void setPresupuesto(Integer presupuesto) {
         this.presupuesto = presupuesto;
     }
 
-    public List<EdificioPublico> getEdificios() {
+    public ArrayList<EdificioPublico> getEdificios() {
         return edificios;
-    }
-
-    public void setEdificios(List<EdificioPublico> edificios) {
-        this.edificios = edificios;
     }
 
     @Override
     public String toString() {
         return "Conselleria{" +
-                "nombre='" + nombre + '\'' +
-                ", responsable=" + responsable +
+                "nombreConselleria='" + nombreConselleria + '\'' +
+                ", represetante=" + represetante +
                 ", presupuesto=" + presupuesto +
                 ", edificios=" + edificios +
                 '}';

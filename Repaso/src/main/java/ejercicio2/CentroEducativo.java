@@ -3,41 +3,36 @@ package ejercicio2;
 import java.util.HashMap;
 
 public class CentroEducativo {
-    private String nombre;
-    private HashMap<String,Curso> cursos;
+    private String nombreCentro;
+    private HashMap<String,Curso> cursos = new HashMap<>();
 
     public CentroEducativo() {
     }
 
-    public CentroEducativo(String nombre) {
-        this.nombre = nombre;
-        this.cursos = new HashMap<>();
+    public CentroEducativo(String nombreCentro) {
+        this.nombreCentro = nombreCentro;
     }
 
-    public void agregarCurso(String nombreCusos,Curso curso) {
-        cursos.put(nombreCusos,new Curso());
+    public void agregarCurso(String nombreCentro, Curso Curso){
+        cursos.put(nombreCentro,Curso);
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreCentro() {
+        return nombreCentro;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreCentro(String nombreCentro) {
+        this.nombreCentro = nombreCentro;
     }
 
     public HashMap<String, Curso> getCursos() {
         return cursos;
     }
 
-    public void setCursos(HashMap<String, Curso> cursos) {
-        this.cursos = cursos;
-    }
-
     @Override
     public String toString() {
         return "CentroEducativo{" +
-                "nombre='" + nombre + '\'' +
+                "nombreCentro='" + nombreCentro + '\'' +
                 ", cursos=" + cursos +
                 '}';
     }

@@ -3,27 +3,28 @@ package ejercicio2;
 import java.time.LocalDate;
 
 public class Estudiante extends Persona{
-    private String etapaMadurez;
+    private String madurez;
+    private Persona tutorLegal;
     private CentroEducativo centro;
     private Curso curso;
     private Casa casa;
-    private  String tutorLegal;
 
     public Estudiante() {
     }
 
-    public Estudiante(String nombre, String tutorLegal, LocalDate fechaNacimiento, CentroEducativo centro, Curso curso) {
+    public Estudiante(String nombre, LocalDate fechaNacimiento, Persona tutorLegal, CentroEducativo centro, Curso curso) {
         super(nombre, fechaNacimiento);
+        this.madurez = determinarMadurez();
         this.tutorLegal = tutorLegal;
-        this.etapaMadurez = determinarMadurez();
         this.centro = centro;
         this.curso = curso;
         curso.agregarEstudiantes(this);
         this.casa = Casa.asignarCasa();
+
     }
 
-    private String determinarMadurez(){
-        if (edad <12){
+    private String determinarMadurez() {
+        if (edad < 12){
             return "Infantil";
         } else if (edad < 18) {
             return "Pavo";
@@ -32,12 +33,20 @@ public class Estudiante extends Persona{
         }
     }
 
-    public String getEtapaMadurez() {
-        return etapaMadurez;
+    public String getMadurez() {
+        return madurez;
     }
 
-    public void setEtapaMadurez(String etapaMadurez) {
-        this.etapaMadurez = etapaMadurez;
+    public void setMadurez(String madurez) {
+        this.madurez = madurez;
+    }
+
+    public Persona getTutorLegal() {
+        return tutorLegal;
+    }
+
+    public void setTutorLegal(Persona tutorLegal) {
+        this.tutorLegal = tutorLegal;
     }
 
     public CentroEducativo getCentro() {
@@ -64,22 +73,14 @@ public class Estudiante extends Persona{
         this.casa = casa;
     }
 
-    public String getTutorLegal() {
-        return tutorLegal;
-    }
-
-    public void setTutorLegal(String tutorLegal) {
-        this.tutorLegal = tutorLegal;
-    }
-
     @Override
     public String toString() {
         return "Estudiante{" +
-                "etapaMadurez='" + etapaMadurez + '\'' +
+                "madurez='" + madurez + '\'' +
+                ", tutorLegal=" + tutorLegal +
                 ", centro=" + centro +
                 ", curso=" + curso +
                 ", casa=" + casa +
-                ", tutorLegal='" + tutorLegal + '\'' +
                 "} " + super.toString();
     }
 }

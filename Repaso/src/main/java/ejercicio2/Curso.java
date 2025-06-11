@@ -1,11 +1,12 @@
 package ejercicio2;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Set;
 
 public class Curso {
     private String nombreCurso;
+    private ArrayList<Estudiante> estudiantes = new ArrayList<>();
     private CentroEducativo centroEducativo;
-    private LinkedList<Estudiante> estudiantes;
 
     public Curso() {
     }
@@ -13,7 +14,6 @@ public class Curso {
     public Curso(String nombreCurso, CentroEducativo centroEducativo) {
         this.nombreCurso = nombreCurso;
         this.centroEducativo = centroEducativo;
-        this.estudiantes = new LinkedList<>();
     }
 
     public void agregarEstudiantes(Estudiante estudiante){
@@ -36,20 +36,16 @@ public class Curso {
         this.centroEducativo = centroEducativo;
     }
 
-    public LinkedList<Estudiante> getEstudiantes() {
+    public ArrayList<Estudiante> getEstudiantes() {
         return estudiantes;
-    }
-
-    public void setEstudiantes(LinkedList<Estudiante> estudiantes) {
-        this.estudiantes = estudiantes;
     }
 
     @Override
     public String toString() {
         return "Curso{" +
                 "nombreCurso='" + nombreCurso + '\'' +
-                ", centroEducativo=" + centroEducativo +
                 ", estudiantes=" + estudiantes +
+                ", centroEducativo=" + centroEducativo +
                 '}';
     }
 }

@@ -11,4 +11,3 @@ public enum Casa {
         return casas[random.nextInt(casas.length)];
     }
 }
-
