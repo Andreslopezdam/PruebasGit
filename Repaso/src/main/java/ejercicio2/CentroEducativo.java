@@ -1,16 +1,18 @@
 package ejercicio2;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class CentroEducativo {
     private String nombreCentro;
-    private HashMap<String,Curso> cursos = new HashMap<>();
+    private Map<String,Curso> cursos;
 
     public CentroEducativo() {
     }
 
     public CentroEducativo(String nombreCentro) {
         this.nombreCentro = nombreCentro;
+        this.cursos = new HashMap<>();
     }
 
     public void agregarCurso(String nombreCentro, Curso Curso){
@@ -25,9 +27,6 @@ public class CentroEducativo {
         this.nombreCentro = nombreCentro;
     }
 
-    public HashMap<String, Curso> getCursos() {
-        return cursos;
-    }
 
     @Override
     public String toString() {

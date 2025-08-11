@@ -1,12 +1,13 @@
 package ejercicio2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Conselleria {
     private String nombreConselleria;
     private Persona represetante;
     private Integer presupuesto;
-    private ArrayList<EdificioPublico> edificios = new ArrayList<>();
+    private List<EdificioPublico> edificios;
 
     public Conselleria() {
     }
@@ -15,6 +16,7 @@ public class Conselleria {
         this.nombreConselleria = nombreConselleria;
         this.represetante = represetante;
         this.presupuesto = presupuesto;
+        this.edificios = new ArrayList<>();
     }
 
     public void agregarEdificio(EdificioPublico edificioPublico){
@@ -45,9 +47,6 @@ public class Conselleria {
         this.presupuesto = presupuesto;
     }
 
-    public ArrayList<EdificioPublico> getEdificios() {
-        return edificios;
-    }
 
     @Override
     public String toString() {

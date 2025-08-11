@@ -1,11 +1,12 @@
 package ejercicio2;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class Curso {
     private String nombreCurso;
-    private ArrayList<Estudiante> estudiantes = new ArrayList<>();
+    private List<Estudiante> estudiantes;
     private CentroEducativo centroEducativo;
 
     public Curso() {
@@ -14,6 +15,7 @@ public class Curso {
     public Curso(String nombreCurso, CentroEducativo centroEducativo) {
         this.nombreCurso = nombreCurso;
         this.centroEducativo = centroEducativo;
+        this.estudiantes = new ArrayList<>();
     }
 
     public void agregarEstudiantes(Estudiante estudiante){
@@ -36,9 +38,6 @@ public class Curso {
         this.centroEducativo = centroEducativo;
     }
 
-    public ArrayList<Estudiante> getEstudiantes() {
-        return estudiantes;
-    }
 
     @Override
     public String toString() {

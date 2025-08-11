@@ -14,9 +14,8 @@ public class Cola {
     }
 
     private void redimensionar() {
-        int nuevaCapacidad = array.length * 2;
-        Libro[] nuevoArray = new Libro[nuevaCapacidad];
-        for (int i = 0; i < size; i++) {
+        Libro[] nuevoArray = new Libro[array.length + 1];
+        for (int i = 0; i < array.length; i++) {
             nuevoArray[i] = array[(frente + i) % array.length];
         }
         array = nuevoArray;
@@ -28,13 +27,14 @@ public class Cola {
             redimensionar();
         }
         finalCola = (finalCola + 1) % array.length;
-        array[finalCola++] = libro;
+        array[finalCola] = libro;
         size ++;
     }
 
     public Libro sacar(){
         if (isEmptyCola()){
             System.out.println("Esta vacio");
+            return null;
         }
         Libro libro = array[frente];
         frente = (frente + 1) % array.length;
@@ -55,13 +55,13 @@ public class Cola {
     }
 
     public int sizeCola() {
-        return size;
+        return array.length;
     }
 
     public void mostrarCola() {
         for (int i = 0;i < size;i++){
             int index = (frente + i) % array.length;
-            System.out.println(array[i]);
+            System.out.println(array[index]);
         }
     }
 }

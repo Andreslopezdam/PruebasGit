@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class EdificioPublico {
-    private Set<String> codigoUsado = new HashSet<>();
+    private static int contadorId = 1;
     private String id;
     private String nombreEdificio;
     private String direccion;
@@ -14,19 +14,10 @@ public class EdificioPublico {
     }
 
     public EdificioPublico(String id, String nombreEdificio, String direccion, String fundacion) {
-        this.id = id;
-        codigoUsado.add(id);
+        this.id = "EDIF" + contadorId++;
         this.nombreEdificio = nombreEdificio;
         this.direccion = direccion;
         this.fundacion = fundacion;
-    }
-
-    public Set<String> getCodigoUsado() {
-        return codigoUsado;
-    }
-
-    public void setCodigoUsado(Set<String> codigoUsado) {
-        this.codigoUsado = codigoUsado;
     }
 
     public String getId() {

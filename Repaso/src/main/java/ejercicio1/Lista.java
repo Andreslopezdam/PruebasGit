@@ -10,7 +10,7 @@ public class Lista {
     }
 
     private void redimensiona() {
-        Libro[] nuevaLista = new Libro[lista.length * 3];
+        Libro[] nuevaLista = new Libro[lista.length + 1];
         for (int i = 0; i < size;i++){
             nuevaLista[i]  = lista[i];
         }
@@ -42,18 +42,18 @@ public class Lista {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Indice fuera de rango");
         }
-        for (int i = index;i < size - 1;i++){
+        for (int i = index;i < lista.length;i++){
             lista[i] = lista[i + 1];
         }
         lista[--index] = null;
     }
 
     public int size() {
-        return size;
+        return lista.length;
     }
 
     public void mostrar() {
-        for (int i = 0;i < size;i++){
+        for (int i = 0;i < lista.length;i++){
             System.out.println(lista[i]);
         }
     }
